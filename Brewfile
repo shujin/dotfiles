@@ -1,20 +1,24 @@
-tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
+tap "github/gh"
+tap "hashicorp/tap"
 
 brew "carthage"
 brew "diff-so-fancy"
 brew "direnv"
 brew "elixir"
 brew "git"
+brew "gh"
 brew "go"
+brew "hashicorp/tap/terraform"
 brew "hugo"
 brew "jq"
 brew "kubernetes-cli"
 brew "libpq"
 brew "lolcat"
 brew "mas"
+brew "mitmproxy"
 brew "rbenv"
 brew "swiftlint"
 brew "the_silver_searcher"
@@ -25,14 +29,12 @@ brew "yarn"
 brew "youtube-dl"
 brew "zsh"
 brew "zsh-syntax-highlighting"
-brew "github/gh/gh"
 
 # Casks
 cask "1password"
 cask "adobe-creative-cloud"
 cask "alfred"
 cask "bartender"
-cask "cakebrew"
 cask "docker"
 cask "dropbox"
 cask "google-chrome"
@@ -41,6 +43,7 @@ cask "postman"
 cask "spotify"
 cask "steam"
 cask "visual-studio-code"
+cask "kawa"
 
 # Font casks
 cask "font-fira-mono"
@@ -49,11 +52,8 @@ cask "font-icomoon"
 cask "font-im-fell-types"
 cask "font-ionicons"
 cask "font-jetbrains-mono"
-cask "font-inconsolata-for-powerline"
 cask "font-material-icons"
-cask "font-materialdesignicons-webfont"
 cask "font-meslo-for-powerline"
-cask "font-noto-mono-for-powerline"
 cask "font-open-iconic"
 cask "font-powerline-symbols"
 
@@ -65,5 +65,4 @@ mas "Soulver", id: 413965349
 mas "Spark", id: 1176895641
 mas "Super Resize", id: 1023220867
 mas "The Clock", id: 488764545
-mas "Tot", id: 1491071483
 mas "Xcode", id: 497799835

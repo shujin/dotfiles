@@ -4,12 +4,11 @@ export FPATH="$HOME/.zshf:$FPATH"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-autoload spectrum && spectrum
+# autoload spectrum && spectrum
 
 ZSH_THEME="agnoster"
 
-plugins=(git osx zsh-syntax-highlighting)
-
+plugins=(git osx docker kubectl zsh-autosuggestions gcloud zsh-syntax-highlighting zsh-completions)
 bindkey '[C' forward-word
 bindkey '[D' backward-word
 
@@ -56,7 +55,7 @@ alias gp="git push"
 alias gc="git commit -m"
 alias gco="git checkout"
 alias gb="git branch"
-alias gstat="git status"
+alias gs="git status"
 alias ga="git add ."
 
 # commands aliases
@@ -66,17 +65,24 @@ alias s="sudo"
 alias milkyway="cd /Volumes/Milky\ Way/"
 alias h2g2="cd /Volumes/H2G2/"
 
-export NVM_DIR="$HOME/.nvm"
-  . "/usr/local/opt/nvm/nvm.sh"
-
-autoload -U add-zsh-hook
-load-nvmrc() {
-	  if [[ -f .nvmrc && -r .nvmrc ]]; then
-			    nvm use
-					  fi
-}
-add-zsh-hook chpwd load-nvmrc
-
-export PATH="~/.rbenv/shims:${PATH}"
+export PATH="~/.rbenv/shims:/usr/local/bin/code:${PATH}"
 export RBENV_SHELL=zsh
-export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Hom
+
+eval "$(rbenv init -)"
+eval "$(direnv hook zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# autoload -U +X bashcompinit && bashcompinit
+autoload -U compinit && compinit
+complete -o nospace -C /usr/local/bin/terraform terraform
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/path/to/google-cloud-sdk/path.zsh.inc' ]; then . '/path/to/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/path/to/google-cloud-sdk/completion.zsh.inc' ]; then . '/path/to/google-cloud-sdk/completion.zsh.inc'; fi
