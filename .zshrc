@@ -43,6 +43,7 @@ export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin"
 
 source $ZSH/oh-my-zsh.sh
 
+alias addspacer="defaults write com.apple.dock persistent-apps -array-add '{tile-type="spacer-tile";}';killall Dock"
 alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl ~/.oh-my-zsh"
 
