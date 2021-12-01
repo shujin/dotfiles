@@ -8,7 +8,7 @@ export LC_ALL=en_US.UTF-8
 
 ZSH_THEME="agnoster"
 
-plugins=(git osx docker kubectl zsh-autosuggestions gcloud zsh-syntax-highlighting zsh-completions)
+plugins=(git macos docker kubectl zsh-autosuggestions gcloud zsh-syntax-highlighting zsh-completions)
 bindkey '[C' forward-word
 bindkey '[D' backward-word
 
@@ -44,8 +44,8 @@ export PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/local/share/npm/bin"
 source $ZSH/oh-my-zsh.sh
 
 alias addspacer="defaults write com.apple.dock persistent-apps -array-add '{tile-type="spacer-tile";}';killall Dock"
-alias zshconfig="subl ~/.zshrc"
-alias ohmyzsh="subl ~/.oh-my-zsh"
+alias zshconfig="code ~/.zshrc"
+alias ohmyzsh="code ~/.oh-my-zsh"
 
 # ssh servers aliases
 alias servername="ssh -i /path/to/pem user@server.location"
