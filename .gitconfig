@@ -1,0 +1,22 @@
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[user]
+	email = <add_email>
+	name = <add_name>
+[pull]
+	rebase = false
+[diff]
+	tool = Kaleidoscope
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[merge]
+	tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
+[alias]
+	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
