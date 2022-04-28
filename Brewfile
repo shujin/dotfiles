@@ -4,6 +4,7 @@ tap "homebrew/core"
 tap "github/gh"
 tap "hashicorp/tap"
 
+brew "brimdata/tap/zq"
 brew "carthage"
 brew "diff-so-fancy"
 brew "direnv"
